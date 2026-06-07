@@ -7,6 +7,12 @@ interface Store {
   user: UserMetadata | undefined
   accessToken: string
   plan: string | undefined
+  // Panel authentication
+  panelCode: string | undefined
+  deviceId: string | undefined
+  codeExpiresAt: string | undefined
+  codeSecondsLeft: number | undefined
+  codeValid: boolean
 }
 
 export const auth$ = observable<Store>({
@@ -15,4 +21,9 @@ export const auth$ = observable<Store>({
   user: undefined,
   accessToken: '',
   plan: undefined,
+  panelCode: undefined,
+  deviceId: undefined,
+  codeExpiresAt: undefined,
+  codeSecondsLeft: undefined,
+  codeValid: false,
 })
